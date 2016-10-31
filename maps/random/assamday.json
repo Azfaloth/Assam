@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"Name" : "Assam - Day",
+		"Script" : "assamday.js",
+		"Description" : "Players start in the northeastern mountainous regions of India at the base of the Himalayas. This region is covered by dense forests over rolling hills. This area experiences very heavy rainfall and is home to several species of wildlife.",
+		"BaseTerrain" : ["tropic_grass_c", "tropic_grass_c", "tropic_grass_c", "tropic_grass_c", "tropic_grass_plants", "tropic_plants", "tropic_plants_b"],
+		"BaseHeight" : 3,
+		"Preview" : "assamday.png",
+		"CircularMap" : true,
+		"XXXXXX" : "Optionally define other things here, like we would for a scenario"
+	}
+}
