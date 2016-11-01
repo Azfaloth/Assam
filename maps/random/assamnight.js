@@ -89,6 +89,7 @@ for (var i = 0; i < numPlayers; i++)
 	playerX[i] = 0.5 + 0.35*cos(playerAngle[i]);
 	playerZ[i] = 0.5 + 0.35*sin(playerAngle[i]);
 }
+RMS.SetProgress(5);
 
 for (var i = 0; i < numPlayers; i++)
 {
@@ -197,7 +198,7 @@ for (var i = 0; i < numPlayers; i++)
 	}
 }
 
-RMS.SetProgress(15);
+RMS.SetProgress(20);
 createBumps(avoidClasses(clPlayer, 9));
 
 //createMountains(tCliff, avoidClasses(clPlayer, 20, clHill, 8), clHill, scaleByMapSize(20, 180));
@@ -224,7 +225,7 @@ RMS.SetProgress(45);
 
 var MIN_TREES = 2000;
 var MAX_TREES = 10000;
-var P_FOREST = 0.7;
+var P_FOREST = 0.8;
 
 var totalTrees = scaleByMapSize(MIN_TREES, MAX_TREES);
 var numForest = totalTrees * P_FOREST;
@@ -256,7 +257,7 @@ for (var i = 0; i < types.length; ++i)
 	);
 }
 
-RMS.SetProgress(70);
+RMS.SetProgress(55);
 
 // create grass patches
 log("Creating grass patches...");
@@ -291,6 +292,8 @@ for (var i = 0; i < sizes.length; i++)
 	);
 }
 
+RMS.SetProgress(65);
+
 log("Creating stone mines...");
 // create large stone quarries
 group = new SimpleGroup([new SimpleObject(oStoneSmall, 0,2, 0,4), new SimpleObject(oStoneLarge, 1,1, 0,4)], true, clRock);
@@ -313,6 +316,8 @@ createObjectGroups(group, 0,
 	avoidClasses(clForest, 1, clPlayer, 20, clMetal, 1, clRock, 1, clHill, 1),
 	scaleByMapSize(4,16), 100
 );
+
+RMS.SetProgress(75);
 
 // create small decorative rocks
 log("Creating small decorative rocks...");
@@ -349,8 +354,6 @@ createObjectGroups(group, 0,
 	12 * scaleByMapSize(13, 200)
 );
 
-RMS.SetProgress(90);
-
 // create large grass tufts
 log("Creating large grass tufts...");
 group = new SimpleGroup(
@@ -360,8 +363,6 @@ createObjectGroups(group, 0,
 	avoidClasses(clWater, 3, clPlayer, 2, clDirt, 1, clForest, 0),
 	12 * scaleByMapSize(13, 200)
 );
-
-RMS.SetProgress(95);
 
 // create bushes
 log("Creating bushes...");
@@ -373,7 +374,7 @@ createObjectGroups(group, 0,
 	12 * scaleByMapSize(13, 200), 50
 );
 
-RMS.SetProgress(95);
+RMS.SetProgress(85);
 
 // create straggler trees
 log("Creating straggler trees...");
@@ -414,6 +415,17 @@ createObjectGroups(group, 0,
 	numPlayers, 50
 );
 
+// create rhinos
+log("Creating elephants...");
+group = new SimpleGroup(
+	[new SimpleObject(oRhino, 3,5, 0,6)],
+	true, clWildlife
+);
+createObjectGroups(group, 0,
+	avoidClasses(clForest, 0, clPlayer, 10, clHill, 1, clTiger, 5),
+	numPlayers, 50
+);
+
 
 // create tiger
 log("Creating tigers...");
@@ -422,11 +434,11 @@ group = new SimpleGroup(
 	true, clTiger
 );
 createObjectGroups(group, 0,
-	avoidClasses(clPlayer, 20, clFood, 30),
+	avoidClasses(clPlayer, 20, clFood, 30, clHill, 1),
 	2 * numPlayers, 50
 );
 
-RMS.SetProgress(75);
+RMS.SetProgress(95);
 
 // create berry bush
 log("Creating berry bush...");
