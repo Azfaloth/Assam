@@ -222,8 +222,8 @@ RMS.SetProgress(45);
 
 // calculate desired number of trees for map (based on size)
 
-var MIN_TREES = 1000;
-var MAX_TREES = 6000;
+var MIN_TREES = 2000;
+var MAX_TREES = 10000;
 var P_FOREST = 0.7;
 
 var totalTrees = scaleByMapSize(MIN_TREES, MAX_TREES);
