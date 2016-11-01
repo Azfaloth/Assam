@@ -23,6 +23,7 @@ const oFish = "gaia/fauna_fish";
 const oDeer = "gaia/fauna_deer";
 const oElephant = "gaia/fauna_elephant_asian";
 const oTiger = "gaia/fauna_tiger";
+const oRhino = "gaia/fauna_rhino";
 const oSheep = "gaia/fauna_tiger";
 const oChicken = "gaia/fauna_chicken";
 const oBush = "gaia/flora_bush_berry";
